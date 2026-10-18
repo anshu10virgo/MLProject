@@ -1,0 +1,9 @@
+setuptools
+scikit-learn
+pandas
+numpy
+matplotlib
+seaborn
+logging
+statsmodels
+-e .
