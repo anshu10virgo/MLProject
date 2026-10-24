@@ -9,4 +9,5 @@ statsmodels
 ipykernel
 catboost
 xgboost
--e .
+dill
+#-e .
