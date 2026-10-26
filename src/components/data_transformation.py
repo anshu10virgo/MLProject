@@ -107,4 +107,5 @@ class DataTransformation:
             )
 
         except Exception as e:
+            logging.error(e)
             raise CustomException(e,sys)

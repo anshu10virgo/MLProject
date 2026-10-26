@@ -150,7 +150,8 @@ activemq-data/
 *.sage.py
 
 # Environments
-.artifacts
+.artifacts/
+.catboost_info/
 .env
 .envrc
 .venv
