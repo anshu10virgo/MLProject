@@ -6,6 +6,9 @@ from src.logger import logging
 from src.utils import load_object
 
 class PredictPipeline:
+    model = None
+    preprocessor = None
+
     def __init__(self):
         pass
 
@@ -15,11 +18,14 @@ class PredictPipeline:
             model_path = 'artifacts/model.pkl'
             preprocessor_path = 'artifacts/preprocessor.pkl'
 
-            preprocessor = load_object(file_path=preprocessor_path)
-            model = load_object(file_path=model_path)
+            if PredictPipeline.preprocessor is None:
+                PredictPipeline.preprocessor = load_object(file_path=preprocessor_path)
 
-            data_scaled = preprocessor.transform(features)
-            preds = model.predict(data_scaled)
+            if PredictPipeline.model is None:
+                PredictPipeline.model = load_object(file_path=model_path)
+
+            data_scaled = PredictPipeline.preprocessor.transform(features)
+            preds = PredictPipeline.model.predict(data_scaled)
 
             return(preds)
         except Exception as e:
