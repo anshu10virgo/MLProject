@@ -1,0 +1,12 @@
+version: 0.2
+
+phases:
+  artifacts:
+    files:
+      - 'application.py'
+      - 'requirements.txt'
+      - 'Procfile'
+      - '.ebextensions/**/*'
+      - 'src/**/*'
+      - 'templates/**/*'
+      - 'static/**/*'
